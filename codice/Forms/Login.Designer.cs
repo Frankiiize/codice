@@ -107,12 +107,12 @@
             loginBtn.FlatAppearance.MouseOverBackColor = Color.White;
             loginBtn.Font = new Font("Segoe UI", 12F);
             loginBtn.ForeColor = Color.White;
-            loginBtn.Location = new Point(176, 266);
+            loginBtn.Location = new Point(261, 266);
             loginBtn.Margin = new Padding(3, 30, 3, 3);
             loginBtn.Name = "loginBtn";
-            loginBtn.Size = new Size(205, 33);
+            loginBtn.Size = new Size(120, 36);
             loginBtn.TabIndex = 4;
-            loginBtn.Text = "Ir";
+            loginBtn.Text = "LogIn";
             loginBtn.UseVisualStyleBackColor = false;
             loginBtn.Click += button1_Click;
             // 

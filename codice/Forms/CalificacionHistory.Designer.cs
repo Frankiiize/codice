@@ -164,14 +164,9 @@
         private TableLayoutPanel tableLayoutPanel1;
         private Label labelTitle;
         private TableLayoutPanel tableLayoutPanel2;
-        private ComboBox comboboxAsignaturas;
-        private Label label2;
         private Label label1;
         private DataGridView dataGridCalificaciones;
         private TextBox inputRut;
         private Button button1;
-        private Label label3;
-        private DateTimePicker inputFechaAsistencia;
-        private ComboBox comboBoxCursos;
     }
 }

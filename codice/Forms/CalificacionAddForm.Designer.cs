@@ -338,17 +338,11 @@
         private TableLayoutPanel tableLayoutPanel2;
         private TextBox inputRut;
         private Label label12;
-        private Label label10;
-        private Label label8;
         private Label label6;
         private Label label4;
         private Label label2;
-        private TextBox inputApellido;
-        private TextBox inputTelefono;
-        private TextBox inputCorreo;
         private DateTimePicker inputFechaCalificacion;
         private Label labelCurso;
-        private ComboBox inputCursos;
         private TableLayoutPanel tableLayoutPanel3;
         private Button ActBtn;
         private TextBox inputEvaluacion;
