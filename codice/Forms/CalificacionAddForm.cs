@@ -1,5 +1,6 @@
 ﻿using codice.Data;
 using codice.Models;
+using codice.Validations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +25,12 @@ namespace codice.Forms
         private void CalificacionAddForm_Load(object sender, EventArgs e)
         {
             inputFechaCalificacion.Format = DateTimePickerFormat.Short;
+            inputAsignatura.Items.Clear();
+            inputAsignatura.Items.Add("Seleccionar Asignatura");
+            inputAsignatura.SelectedIndex = 0;
+            inputAsignatura.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            Validations.Validate.IsActiveBtnStyle(ActBtn, !string.IsNullOrWhiteSpace(inputRut.Text));
         }
 
         string rut = "";
@@ -34,6 +41,16 @@ namespace codice.Forms
 
             Estudiante? Estudiante = EstudianteRepository.BuscarEstudiantePorRut(rut);
 
+            Dictionary<string, string?> fields = new()
+                {
+                    { "Rut", inputRut.Text },
+                };
+
+
+            bool valid = Validations.Validate.InputsValidate(fields);
+
+            if (!valid) return; 
+
 
             if (Estudiante == null)
             {
@@ -41,8 +58,11 @@ namespace codice.Forms
                 return;
             }
 
+
             if (Estudiante != null)
             {
+
+                Validations.Validate.IsActiveBtnStyle(ActBtn, true);
 
                 List<Asignatura> asignaturas = Estudiante.ObtenerAsignaturasInscritas();
 
@@ -50,11 +70,11 @@ namespace codice.Forms
                 labelNombre.Text = $"Nombre: {Estudiante.Nombre} {Estudiante.Apellido}";
                 labelCurso.Text = $"Curso: {Estudiante.ObtenerNombreCurso()}";
 
+
                 foreach (Asignatura asignatura in asignaturas)
                 {
                     inputAsignatura.Items.Add(asignatura);
                 }
-
             }
 
         }
@@ -69,11 +89,21 @@ namespace codice.Forms
                 {
                     Asignatura? asignaturaSeleccionada = inputAsignatura.SelectedItem as Asignatura;
 
-                    if (asignaturaSeleccionada == null)
-                    {
-                        MessageBox.Show("Debe seleccionar una asignatura.");
-                        return;
-                    }
+
+                    Dictionary<string, string?> fields = new()
+                        {
+                            { "Asignatura", asignaturaSeleccionada?.ToString() == "Seleccionar Asignatura" ? "" :  asignaturaSeleccionada?.ToString() },
+                            { "Evaluacion", inputEvaluacion.Text },
+                            { "Nota", inputNota.Text },
+                        };
+
+
+                    if (asignaturaSeleccionada == null) return;
+
+
+                    bool valid = Validations.Validate.InputsValidate(fields);
+
+                    if (!valid) return;
 
                     Calificacion calificacion = new Calificacion();
 
@@ -87,6 +117,10 @@ namespace codice.Forms
                     );
 
                     CalificacionRepository.Agregar(calificacion);
+
+                    inputNota.Text = "";
+                    inputFechaCalificacion.Text = "";
+                    inputEvaluacion.Text = "";
 
                     MessageBox.Show("Calificación registrada correctamente.");
                 }

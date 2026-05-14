@@ -25,7 +25,7 @@ namespace codice.Forms
         {
             dataGridEstudiantes.AllowUserToAddRows = false;
             dataGridEstudiantes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-         
+
 
             inputFechaAsistencia.Format = DateTimePickerFormat.Short;
 

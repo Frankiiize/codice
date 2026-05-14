@@ -1,4 +1,5 @@
-﻿using System;
+﻿using codice.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,18 +9,13 @@ namespace codice.Models
 {
     public class Estudiante : Persona
     {
-
-
         private Curso Curso { get; set; }
-
         private List<Asignatura> AsignaturasInscritas { get; set; }
-
         public Estudiante()
         {
             Curso = new Curso();
             AsignaturasInscritas = new List<Asignatura>();
         }
-
         public bool AgregarEstudiante(int id,
             string rut,
             string nombre,
@@ -41,7 +37,6 @@ namespace codice.Models
             return true;
            
         }
-
         public bool ActualizarEstudiante(
             string rut,
             string nombre,
@@ -104,6 +99,21 @@ namespace codice.Models
                 AsignaturasInscritas.Remove(asignatura);
             }
         }
-    
+
+        public double CalcularPromedioAsignatura(Asignatura asignatura)
+        {
+            List<Calificacion> notas =
+                CalificacionRepository.Calificaciones
+                .Where(c =>
+                    c.ObtenerEstudiante().Rut == this.Rut &&
+                    c.ObtenerAsignatura().ObtenerId() == asignatura.ObtenerId())
+                .ToList();
+
+            if (notas.Count == 0)
+                return 0;
+
+            return notas.Average(c => c.ObtenerNota());
+        }
+
     }
 }

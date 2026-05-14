@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using codice.Validations;
 
 namespace codice.Forms
 {
@@ -38,7 +39,7 @@ namespace codice.Forms
             this.RutEstudiante = RutEstudiante;
         }
 
-
+       
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -51,20 +52,24 @@ namespace codice.Forms
                 string correo = inputCorreo.Text;
                 string fechaNacimiento = inputFechaNacimiento.Text;
 
-                if (inputCursos.SelectedItem == null)
-                {
-                    MessageBox.Show("Debe seleccionar un curso.");
-                    return;
-                }
+                Dictionary<string, string?> fields = new()
+                    {
+                        { "Rut", inputRut.Text },
+                        { "Nombre", inputNombre.Text },
+                        { "Apellido", inputApellido.Text },
+                        { "Telefono", inputTelefono.Text },
+                        { "Correo", inputCorreo.Text },
+                        { "Curso", inputCursos.SelectedItem?.ToString() == "Seleccionar curso" ? "" :  inputCursos.SelectedItem?.ToString() }
+                    };
 
-                if (string.IsNullOrWhiteSpace(inputRut.Text))
-                {
-                    MessageBox.Show("Rut Invalido.");
-                    return;
-                }
-             
+                bool valid = Validations.Validate.InputsValidate(fields);
 
-                Curso cursoSeleccionado = (Curso)inputCursos.SelectedItem;
+                if (!valid) return;
+
+                Curso? cursoSeleccionado = inputCursos.SelectedItem as Curso;
+
+                if (cursoSeleccionado == null) return;
+
                 int id = EstudianteRepository.GenerarId();
 
                 Estudiante es = new Estudiante();
@@ -93,7 +98,9 @@ namespace codice.Forms
                     inputApellido.Text = "";
                     inputTelefono.Text = "";
                     inputCorreo.Text = "";
-                    inputFechaNacimiento.Text = ""; 
+                    inputFechaNacimiento.Text = "";
+                    inputCursos.Items.Clear();
+                    inputCursos.Items.Add("Seleccionar curso");
 
                 }
                 else
@@ -165,7 +172,18 @@ namespace codice.Forms
 
             mockData.SeedCursos();
 
-            inputCursos.DataSource = CursoRepository.ObtenerTodos();
+            inputCursos.Items.Clear();
+
+            inputCursos.Items.Add("Seleccionar curso");
+
+            foreach (Curso curso in CursoRepository.ObtenerTodos())
+            {
+                inputCursos.Items.Add(curso);
+            }
+
+            inputCursos.SelectedIndex = 0;
+            inputCursos.DropDownStyle = ComboBoxStyle.DropDownList;
+
 
             if (Modo == MODO_REGISTRAR)
             {

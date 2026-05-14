@@ -26,6 +26,16 @@ namespace codice.Forms
         {
             string rut = inputRut.Text;
 
+            Dictionary<string, string?> fields = new()
+                    {
+                        { "Rut", inputRut.Text },
+                    };
+
+            bool valid = Validations.Validate.InputsValidate(fields);
+
+            if (!valid) return;
+
+
             Estudiante? estudiante =  EstudianteRepository.BuscarEstudiantePorRut(rut);
 
             if (estudiante == null)

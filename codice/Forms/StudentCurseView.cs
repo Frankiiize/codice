@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,7 +17,6 @@ namespace codice.Forms
     {
 
         private string? RutEstudiante { get; set; }
-
 
         public StudentCurseView()
         {
@@ -38,6 +38,8 @@ namespace codice.Forms
             dataListAsignaturas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataListAsignaturas.ReadOnly = true;
 
+            
+
             if (estudiante != null)
             {
                 Curso cursoEstudiante = estudiante.ObtenerCurso();
@@ -48,14 +50,18 @@ namespace codice.Forms
                 dataListAsignaturas.Columns.Add("Id", "ID");
                 dataListAsignaturas.Columns.Add("Nombre", "Nombre");
                 dataListAsignaturas.Columns.Add("Codigo", "Código");
+                dataListAsignaturas.Columns.Add("Promedio", "Promedio");
 
 
                 foreach (Asignatura asignatura in estudiante.ObtenerAsignaturasInscritas())
                 {
+                    double promedio = estudiante.CalcularPromedioAsignatura(asignatura);
+
                     dataListAsignaturas.Rows.Add(
                         asignatura.ObtenerId(),
                         asignatura.ObtenerNombre(),
-                        asignatura.ObtenerCodigo()
+                        asignatura.ObtenerCodigo(),
+                        promedio
                     );
                 }
             }

@@ -57,6 +57,7 @@ namespace codice.Data
             DocenteRepository.Agregar(docente);
         }
 
+
         public void SeedCursos()
         {
             Asignatura programacion = new Asignatura();

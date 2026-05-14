@@ -1,4 +1,5 @@
 ﻿using codice.Data;
+using codice.Validations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +25,20 @@ namespace codice
         {
             string email = inputEmail.Text;
             string password = inputPassword.Text;
+
+            Dictionary<string, string?> fields = new()
+                {
+                    { "Email", inputEmail.Text },
+                    { "Password", inputPassword.Text },
+                };
+
+
+            bool valid = Validations.Validate.InputsValidate(fields);
+
+            if (!valid)
+            {
+                return;
+            }
 
             bool EsValido = DocenteRepository.ValidarAcceso(email, password);
 

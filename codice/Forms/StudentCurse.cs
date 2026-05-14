@@ -1,5 +1,6 @@
 ﻿using codice.Data;
 using codice.Models;
+using codice.Validations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -61,12 +62,18 @@ namespace codice.Forms
         {
             rut = inputRut.Text;
 
-            if (string.IsNullOrWhiteSpace(inputRut.Text))
+            Dictionary<string, string?> fields = new()
+                {
+                    { "Rut", inputRut.Text },
+                };
+
+
+            bool valid = Validations.Validate.InputsValidate(fields);
+
+            if (!valid)
             {
-                MessageBox.Show("Rut Invalido.");
                 return;
             }
-
 
             Estudiante? EstudianteExists = EstudianteRepository.BuscarEstudiantePorRut(rut);
 

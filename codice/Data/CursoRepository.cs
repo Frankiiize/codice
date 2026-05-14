@@ -20,7 +20,12 @@ namespace codice.Data
 
         public static void Agregar(Curso curso)
         {
-            Cursos.Add(curso);
+            bool existe = Cursos.Any(c => c.ObtenerId() == curso.ObtenerId());
+
+            if (!existe)
+            {
+                Cursos.Add(curso);
+            }
         }
 
         public static List<Curso> ObtenerTodos()
@@ -32,6 +37,7 @@ namespace codice.Data
         {
             return Cursos.FirstOrDefault(c => c.ObtenerId() == id);
         }
+
 
     }
 }

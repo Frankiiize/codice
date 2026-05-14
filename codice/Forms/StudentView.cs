@@ -1,5 +1,6 @@
 ﻿using codice.Data;
 using codice.Models;
+using codice.Validations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,14 +27,36 @@ namespace codice.Forms
         {
 
             rut = inputRut.Text;
+
+            Dictionary<string, string?> fields = new()
+                {
+                    { "Rut", inputRut.Text },
+                };
+
+
+            bool valid = Validations.Validate.InputsValidate(fields);
+
+            if (!valid) {
+
+                labelNombre.Text = "";
+                labelApellido.Text = "";
+                labelTelefono.Text = "";
+                labelCorreo.Text = "";
+                labelEdad.Text = "";
+                labelCurso.Text = "";
+                return;
+
+            };
+
+
             Estudiante? Estudiante = EstudianteRepository.BuscarEstudiantePorRut(rut);
 
-            this.IsActiveBtnStyle(buttonAsignaturas, !string.IsNullOrWhiteSpace(rut));
+           
 
             if (Estudiante != null)
             {
                 tableStudentInfo.Visible = true;
-                buttonAsignaturas.Enabled = !string.IsNullOrWhiteSpace(rut);
+                Validations.Validate.IsActiveBtnStyle(buttonAsignaturas, true);
 
                 DateTime hoy = DateTime.Now;
 
@@ -54,13 +77,18 @@ namespace codice.Forms
             }
             else
             {
+                tableStudentInfo.Visible = false;
+                Validations.Validate.IsActiveBtnStyle(buttonAsignaturas, false);
+
+                labelNombre.Text = "";
+                labelApellido.Text = "";
+                labelTelefono.Text = "";
+                labelCorreo.Text = "";
+                labelEdad.Text = "";
+                labelCurso.Text = "";
+
                 MessageBox.Show($"No se encontraron estudiantes registrados con el RUT: {rut}");
             }
-
-        }
-
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
 
         }
 
@@ -68,7 +96,7 @@ namespace codice.Forms
         {
             tableStudentInfo.Visible = false;
 
-            this.IsActiveBtnStyle(buttonAsignaturas, !string.IsNullOrWhiteSpace(rut));
+            Validations.Validate.IsActiveBtnStyle(buttonAsignaturas, false);
 
 
         }
@@ -94,28 +122,6 @@ namespace codice.Forms
 
         }
 
-
-
-        private void IsActiveBtnStyle(Button btn, bool state)
-        {
-            if (state)
-            {
-                btn.Enabled = true;
-
-                btn.BackColor = Color.FromArgb(37, 97, 235);
-                btn.ForeColor = Color.White;
-
-            }
-            else
-            {
-                btn.Enabled = false;
-
-                btn.BackColor = Color.FromArgb(180, 180, 180);
-                btn.ForeColor = Color.White;
-            }
-
-        }
-
         private void buttonAsignaturas_Click(object sender, EventArgs e)
         {
             StudentCurseView frm = new StudentCurseView();
@@ -127,10 +133,6 @@ namespace codice.Forms
             }
 
         }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
+   
     }
 }
