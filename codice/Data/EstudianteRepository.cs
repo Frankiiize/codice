@@ -44,5 +44,10 @@ namespace codice.Data
             );
         }
 
+        public static List<Estudiante> ObtenerTodosLosEstudiantes()
+        {
+            return Estudiantes;
+        }
+
     }
 }

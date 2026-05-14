@@ -18,46 +18,55 @@ namespace codice.Data
 
             int id = DocenteRepository.GenerarId();
 
-            usuario.AgregarUsuario( id, "admin@email.com", "1234", "Docente");
+            usuario.AgregarUsuario(id, "admin", "1234", "Docente");
 
-            List<Asignatura> asignaturas = new List<Asignatura>();
+            Asignatura programacion = new Asignatura();
+            programacion.CrearAsignatura(1, "Programación", "PROG101");
 
-            Asignatura asignatura1 = new Asignatura();
-            asignatura1.CrearAsignatura(1, "Programacion", "PROG101");
+            Asignatura baseDatos = new Asignatura();
+            baseDatos.CrearAsignatura(2, "Base de Datos", "BD202");
 
-            Asignatura asignatura2 = new Asignatura();
-            asignatura2.CrearAsignatura(1, "Base de Datos", "BD202");
+            Curso curso1 = new Curso();
+            curso1.CrearCurso(1, "Ingeniería en Informática", "Diurna");
+            curso1.AgregarAsignatura(programacion);
+            curso1.AgregarAsignatura(baseDatos);
 
-            asignaturas.Add(asignatura1);
-            asignaturas.Add(asignatura2);
-
+            Curso curso2 = new Curso();
+            curso2.CrearCurso(2, "Analista Programador", "Vespertina");
+            curso2.AgregarAsignatura(programacion);
 
             docente.AsignarUsuario(usuario);
-
             docente.AgregarEspecialidad("Programación");
 
-            docente.AgregarDocente(id, "26007476-8", "francisco", "jimenez", "964409213", usuario.Email, Convert.ToDateTime("1990-05-25"));
+            docente.AgregarDocente(
+                id,
+                "26007476-8",
+                "francisco",
+                "jimenez",
+                "964409213",
+                usuario.Email,
+                Convert.ToDateTime("1990-05-25")
+            );
 
-            for (int i = 0; i < asignaturas.Count; i++)
-            {
-                Asignatura asignatura = asignaturas[i];
-                docente.AgregarAsignatura(asignatura);
-            }
+            docente.AgregarAsignatura(programacion);
+            docente.AgregarAsignatura(baseDatos);
+
+            docente.AgregarCurso(curso1);
+            docente.AgregarCurso(curso2);
 
             DocenteRepository.Agregar(docente);
-
-
-
-
         }
 
         public void SeedCursos()
         {
-            Asignatura prog = new Asignatura();
-            prog.CrearAsignatura(1, "Programación", "PROG101");
+            Asignatura programacion = new Asignatura();
+            programacion.CrearAsignatura(1, "Programación", "PROG101");
 
-            Asignatura bd = new Asignatura();
-            bd.CrearAsignatura(2, "Base de Datos", "BD202");
+            Asignatura programacion2 = new Asignatura();
+            programacion2.CrearAsignatura(5, "Programación II", "PROG102");
+
+            Asignatura baseDatos = new Asignatura();
+            baseDatos.CrearAsignatura(2, "Base de Datos", "BD202");
 
             Asignatura redes = new Asignatura();
             redes.CrearAsignatura(3, "Redes", "RED303");
@@ -65,29 +74,23 @@ namespace codice.Data
             Asignatura ciber = new Asignatura();
             ciber.CrearAsignatura(4, "Ciberseguridad", "CIB404");
 
-
             Curso curso1 = new Curso();
             curso1.CrearCurso(1, "Ingeniería en Informática", "Diurna");
+            curso1.AgregarAsignatura(programacion);
+            curso1.AgregarAsignatura(programacion2);
+            curso1.AgregarAsignatura(baseDatos);
 
             Curso curso2 = new Curso();
             curso2.CrearCurso(2, "Analista Programador", "Vespertina");
+            curso2.AgregarAsignatura(programacion);
 
             Curso curso3 = new Curso();
             curso3.CrearCurso(3, "Ingeniería en Redes", "Diurna");
+            curso3.AgregarAsignatura(redes);
 
             Curso curso4 = new Curso();
             curso4.CrearCurso(4, "Ciberseguridad", "Vespertina");
-
-
-            curso1.AgregarAsignatura(prog);
-            curso1.AgregarAsignatura(bd);
-
-            curso2.AgregarAsignatura(prog);
-
-            curso3.AgregarAsignatura(redes);
-
             curso4.AgregarAsignatura(ciber);
-
 
             CursoRepository.Agregar(curso1);
             CursoRepository.Agregar(curso2);

@@ -13,12 +13,15 @@ namespace codice.Models
 
         private List<Asignatura> Asignaturas { get; set; }
 
+        private List<Curso> Cursos { get; set; }
+
         private Usuario Usuario { get; set; }
 
         public Docente()
         {
             Especialidad = "";
             Asignaturas = new List<Asignatura>();
+            Cursos = new List<Curso>();
             Usuario = new Usuario();
         }
 
@@ -53,6 +56,12 @@ namespace codice.Models
         {
             Asignaturas.Add(asignatura);
         }
+
+        public List<Asignatura> ObtenerAsignaturas()
+        {
+            return this.Asignaturas;
+        }
+
         public void AsignarUsuario(Usuario usuario)
         {
             this.Usuario = usuario;
@@ -63,17 +72,16 @@ namespace codice.Models
             return this.Usuario;
         }
 
-
-        public bool RegistrarAsistencia(int Id)
+        public void AgregarCurso(Curso curso)
         {
-           return true;
+            Cursos.Add(curso);
         }
 
-        public double RegistrarCalificacion()
+        public List<Curso> ObtenerCursos()
         {
-            return 0;
+            return Cursos;
         }
-
+     
         public string ObtenerEspecialidad ()
         {
             return this.Especialidad;

@@ -151,6 +151,7 @@
             GoRegistrar.TabIndex = 3;
             GoRegistrar.Text = "Ir";
             GoRegistrar.UseVisualStyleBackColor = false;
+            GoRegistrar.Click += GoRegistrar_Click;
             // 
             // pictureBox3
             // 
@@ -169,9 +170,9 @@
             label4.ForeColor = Color.FromArgb(17, 24, 39);
             label4.Location = new Point(3, 126);
             label4.Name = "label4";
-            label4.Size = new Size(161, 25);
+            label4.Size = new Size(199, 25);
             label4.TabIndex = 1;
-            label4.Text = "Gestion de cursos";
+            label4.Text = "Gestion de Asistencias";
             // 
             // panel1
             // 

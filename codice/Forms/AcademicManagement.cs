@@ -1,4 +1,5 @@
-﻿using System;
+﻿using codice.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,15 @@ namespace codice
             InitializeComponent();
 
             this.StartPosition = FormStartPosition.CenterScreen;
+        }
+
+        private void GoRegistrar_Click(object sender, EventArgs e)
+        {
+            AsistenciaManagement frm = new AsistenciaManagement();
+
+            frm.ShowDialog();
+
+            this.Hide();
         }
     }
 }

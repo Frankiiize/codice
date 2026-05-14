@@ -13,6 +13,8 @@ namespace codice.Data
 
         private static int siguienteId = 1;
 
+        private static Docente? docenteLogueado = null;
+
         public static int GenerarId()
         {
             return siguienteId++;
@@ -36,10 +38,17 @@ namespace codice.Data
 
         public static bool ValidarAcceso(string email, string password)
         {
+            docenteLogueado = BuscarPorUsuario(email, password);
+
             return BuscarPorUsuario(email, password) != null;
         }
 
-    
+        public static Docente? ObtenerDocenteLogueado()
+        {
+            return docenteLogueado;
+        }
+
+
         public static Docente? BuscarDocentePorRut(string rut)
         {
             return Docentes.FirstOrDefault(d => d.Rut == rut);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using codice.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -43,9 +44,21 @@ namespace codice.Models
         {
             return true;
         }
-        public List<Estudiante> ListarEstudiantes()
+        public List<Estudiante> ListarEstudiantesInscriptos()
         {
-            return [];
+
+         EstudianteRepository.ObtenerTodosLosEstudiantes();
+
+            List<Estudiante> e = new List<Estudiante>();
+
+            foreach (var estudiante in EstudianteRepository.ObtenerTodosLosEstudiantes())
+            {
+                if (estudiante.ObtenerAsignaturasInscritas().Any(a => a.ObtenerId() == this.Id))
+                {
+                    if(estudiante != null) e.Add(estudiante);
+                }
+            }
+            return e;
         }
 
         public string ObtenerNombre()

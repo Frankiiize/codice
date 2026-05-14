@@ -153,6 +153,8 @@ namespace codice.Forms
         {
             MockData mockData = new MockData();
 
+            inputFechaNacimiento.Format = DateTimePickerFormat.Short;
+
             mockData.SeedCursos();
 
             inputCursos.DataSource = CursoRepository.ObtenerTodos();
