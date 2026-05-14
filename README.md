@@ -1,99 +1,184 @@
-README - Codice (Manual de usuario)
+# Manual de Usuario y Técnico Básico  
 
-Resumen
--------
-Aplicación de gestión académica en Windows Forms desarrollada en .NET 8. Permite administrar usuarios, docentes, cursos, asignaturas, estudiantes, calificaciones y asistencias.
+# Sistema Académico Códice
 
-Requisitos
----------
-- Windows 10/11
-- .NET SDK 8.0 instalado
-- Microsoft Visual Studio 2022/2026 con soporte WinForms recomendado (o usar dotnet CLI para compilación)
+# 1. Descripción General
 
-Abrir y ejecutar la aplicación
------------------------------
-1. Abrir la solución: C:\Users\frank\source\repos\codice\codice.slnx en Visual Studio.
-2. Establecer el proyecto "codice" como proyecto de inicio.
-3. Compilar (Build > Build Solution) y ejecutar (F5 o Start).
+Sistema Académico Códice es una aplicación de escritorio desarrollada en C# utilizando Windows Forms y .NET 8. El sistema tiene como objetivo apoyar la gestión académica del Instituto Técnico Profesional Códice, permitiendo administrar estudiantes, cursos, asignaturas, asistencias y calificaciones.
 
-Ejecutar desde línea de comandos
--------------------------------
-- Compilar: dotnet build codice\codice.csproj
-- Ejecutar: dotnet run --project codice\codice.csproj
+La aplicación fue desarrollada aplicando Programación Orientada a Objetos (POO), utilizando clases, herencia, encapsulamiento y repositorios en memoria para gestionar la información.
 
-Datos de demo y usuario de acceso
+---
+
+# 2. Objetivo del Sistema
+
+Digitalizar el proceso académico del instituto mediante una aplicación que permita:
+
+- Registrar y editar estudiantes.
+- Inscribir asignaturas.
+- Registrar asistencias.
+- Registrar calificaciones.
+- Consultar historial académico.
+- Visualizar promedios por asignatura.
+
+---
+
+# 3. Requisitos del Sistema
+
+## Software requerido
+
+- Windows 10 o Windows 11.
+- .NET SDK 8.0 instalado.
+- Visual Studio 2022 o superior.
+- Soporte para Windows Forms.
+
+## Framework utilizado
+net8.0-windows
+
+## Datos de demo y usuario de acceso
 ---------------------------------
 El proyecto contiene datos de ejemplo en codice\Data\MockData.cs.
 - Usuario por defecto de demo: usuario: "admin" contraseña: "1234" (rol: Docente).
-Para cargar los datos de demo al iniciar la aplicación, llamar al inicializador (opcional):
-- Abrir codigo\Program.cs y, antes de Application.Run(...), añadir: new codice.Data.MockData().Initialize();
-(Descomentar o añadir según se desee cargar datos al arranque).
+- Estudiante por defecto de demo: Francisco Jimenez, Rut: 26007476-8
 
-Flujo de uso (manual de usuario)
---------------------------------
-1. Login
-   - Introducir usuario y contraseña válidos. Si se usan datos de demo: admin / 1234.
+# Funcionalidades Principales
 
-2. Gestión de Docentes
-   - Crear, editar y listar docentes.
-   - Asignar cursos y asignaturas a docentes.
+- Inicio de Sesión
+   Permite validar el acceso de docentes mediante usuario y contraseña.
 
-3. Gestión de Cursos
-   - Crear cursos (id, nombre, jornada).
-   - Asociar asignaturas a cada curso.
+### Gestión de Estudiantes
 
-4. Gestión de Asignaturas
-   - Crear y editar asignaturas (nombre, código).
-   - Listar estudiantes inscritos por asignatura.
+Permite:
 
-5. Gestión de Estudiantes
-   - Crear estudiantes en un curso.
-   - Inscribir asignaturas, editar datos personales.
+   - Registrar estudiantes.
+   - Editar estudiantes.
+   - Asociar estudiantes a cursos.
+   - Visualizar información académica.
+   - Consultar asignaturas inscritas.
 
-6. Calificaciones
-   - Registrar calificaciones: id, estudiante, asignatura, nota, fecha, evaluación (descripción).
-   - Consultar notas y obtener historial por estudiante/asignatura.
+### Inscripción de Asignaturas
 
-7. Asistencias
-   - Registrar asistencias por estudiante y asignatura (fecha, presente/ausente).
-   - Consultar historiales de asistencia.
+- Inscribir asignaturas a estudiantes.
+- Visualizar asignaturas disponibles según el curso.
+- Eliminar asignaturas inscritas.
+- Visualizar promedio por asignatura.
 
-Repositorios y almacenamiento
------------------------------
-- La aplicación usa clases Repository en carpeta codice\Data para almacenar datos en memoria (Mock/Repository pattern).
-- Para persistencia real, implementar repositorios que guarden en base de datos (no incluido).
+### Gestión de Asistencias
 
-Proyecto de pruebas
--------------------
-- Proyecto de tests unitarios: codigo.test.
-- Ejecutar tests: dotnet test codice.test\codice.test.csproj o desde Test Explorer en Visual Studio.
+Permite:
 
-Configuración y ajustes
------------------------
-- Target framework del proyecto principal: net8.0-windows.
-- Ajustes de compilación y uso de WinForms están en codice\codice.csproj.
+- Registrar asistencia por:
+   - curso
+   - asignatura
+   - fecha
+- Marcar estudiantes como presentes o ausentes.
+- Consultar historial de asistencia.
 
-Buenas prácticas y notas para usuarios
--------------------------------------
-- Antes de añadir datos en producción, validar formatos de RUT, correo y fechas.
-- Las entidades principales (Estudiante, Docente, Curso, Asignatura) exponen métodos para crear/actualizar; seguir esos métodos para mantener consistencia.
-- Para añadir persistencia, crear implementaciones de los repositorios y reemplazar las listas en memoria.
+### Gestión de Calificaciones
 
-Solución de problemas comunes
------------------------------
-- Error al compilar por incompatibilidad de TargetFramework: asegurar que el proyecto de tests use net8.0-windows para referenciar el proyecto principal.
-- Tests no encuentran tipos internos: hacer las clases públicas o exponer internals mediante InternalsVisibleTo si se requiere.
-- Si no ve datos de demo: activar la llamada a MockData.Initialize() en Program.cs o usar las funciones de carga manual en la UI.
+Permite:
 
-Contacto y contribuciones
--------------------------
-- Repositorio: https://github.com/Frankiiize/codice
-- Para contribuir: abrir issues o pull requests con descripciones claras de cambios.
+- Registrar notas.
+- Asociar evaluaciones a asignaturas.
+- Consultar historial de calificaciones.
+- Calcular promedio por asignatura.
 
-Licencia
---------
-Incluye código de ejemplo; añadir licencia al repositorio si se va a compartir públicamente.
+# Flujo de Uso
 
-Fin del manual
---------------
-Si se desea, puedo generar una versión más corta para usuarios finales o una guía técnica para desarrolladores (arquitectura, patrón repository, lista de clases y APIs internas).
+### Login
+- Usuario: admin
+- Contraseña: 1234
+
+### Gestión Académica
+
+Desde el menú principal se puede acceder a:
+
+- Gestión de estudiantes.
+- Gestión de asistencia.
+- Gestión de calificaciones.
+
+### Registro de Estudiante
+
+- Ingresar datos personales.
+- Seleccionar curso.
+- Guardar estudiante.
+
+### Inscripción de Asignaturas
+
+- Buscar estudiante por RUT.
+- Seleccionar asignaturas.
+- Confirmar inscripción.
+
+### Inscripción de Asignaturas
+
+- Seleccionar curso.
+- Seleccionar asignatura.
+- Seleccionar fecha.
+- Marcar estudiantes presentes.
+- Confirmar asistencia.
+
+### Registro de Calificaciones
+
+- Buscar estudiante.
+- Seleccionar asignatura.
+- Ingresar evaluación.
+- Ingresar nota.
+- Registrar calificación.
+
+# Arquitectura del Proyecto
+
+```bash
+codice/
+├── Data/
+├── Forms/
+├── Models/
+├── Validations/
+├── Program.cs
+└── codice.csproj
+```
+
+
+# Descripción de Carpetas
+
+### Data
+
+Contiene repositorios y datos mock:
+
+- EstudianteRepository
+- CursoRepository
+- DocenteRepository
+- AsistenciaRepository
+- CalificacionRepository
+- MockData
+
+### Models
+
+Contiene las entidades principales del sistema:
+
+- Persona
+- Usuario
+- Docente
+- Estudiante
+- Curso
+- Asignatura
+- Asistencia
+- Calificacion
+
+### Forms
+
+Contiene las ventanas del sistema:
+
+- Login
+- Home
+- StudentForm
+- StudentView
+- StudentCurse
+- StudentCurseView
+- AsistenciaAddForm
+- AsistenciaHistory
+- CalificacionAddForm
+- CalificacionHistory
+
+### Validations
+
+Contiene validaciones reutilizables para formularios.
