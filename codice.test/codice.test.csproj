@@ -3,12 +3,14 @@
   <PropertyGroup>
     <TargetFramework>net8.0-windows</TargetFramework>
     <LangVersion>latest</LangVersion>
-    <UseWindowsForms>true</UseWindowsForms>
+    <!-- UseWindowsForms removed: not needed for test project -->
+    <IsTestProject>true</IsTestProject>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="2.2.10" />
     <PackageReference Include="MSTest.TestFramework" Version="2.2.10" />
   </ItemGroup>

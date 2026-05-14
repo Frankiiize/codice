@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using codice.Models;
+using codice.Data;
 
 namespace codice.test
 {
@@ -99,5 +100,6 @@ namespace codice.test
             Assert.AreEqual(6.5, calificacion.ObtenerNota());
             Assert.AreEqual("Prueba 1", calificacion.ObtenerEvaluacion());
         }
+       
     }
 }

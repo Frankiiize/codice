@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace codice.Data
 {
-    internal class CalificacionRepository
+    public static class CalificacionRepository
     {
         public static List<Calificacion> Calificaciones = new List<Calificacion>();
 
