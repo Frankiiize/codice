@@ -112,16 +112,12 @@ namespace codice.Forms
                     MessageBox.Show("Error al Cargar los cursos");
                     return;
                 }
-
-
-
                 Curso cursoSeleccionado = (Curso)inputCursos.SelectedItem;
-
 
                 Estudiante? estudiante = EstudianteRepository.BuscarEstudiantePorRut(this.RutEstudiante);
 
-                Estudiante es = new Estudiante();
 
+                Estudiante es = new Estudiante();
                 es.Rut = rut;
                 es.Nombre = nombre;
                 es.Apellido = apellido;
@@ -131,10 +127,13 @@ namespace codice.Forms
                 es.AgregarCurso(cursoSeleccionado);
 
 
-
-
                 if (estudiante != null && estudiante.Rut.Length > 0)
                 {
+                    if (estudiante.ObtenerCurso().ObtenerId() != cursoSeleccionado.ObtenerId())
+                    {
+                        estudiante.LimpiarAsignaturasInscritas();
+                    }
+
                     bool estudianteActualizado = EstudianteRepository.ActualizarEstudiante(estudiante.Rut, es);
 
 
@@ -147,8 +146,6 @@ namespace codice.Forms
                         MessageBox.Show("Error al actualizar el estudiante"); ;
                     }
                 }
-
-                MessageBox.Show($"Modo editar {this.RutEstudiante}");
             }
         }
 
@@ -192,14 +189,5 @@ namespace codice.Forms
             }
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

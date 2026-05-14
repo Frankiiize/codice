@@ -50,6 +50,7 @@
             label3 = new Label();
             tableLayoutPanel3 = new TableLayoutPanel();
             btnEditar = new Button();
+            buttonAsignaturas = new Button();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableStudentInfo.SuspendLayout();
@@ -352,6 +353,7 @@
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tableLayoutPanel3.Controls.Add(btnEditar, 3, 0);
+            tableLayoutPanel3.Controls.Add(buttonAsignaturas, 2, 0);
             tableLayoutPanel3.Location = new Point(80, 348);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 1;
@@ -372,6 +374,20 @@
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = false;
             btnEditar.Click += btnEditar_Click;
+            // 
+            // buttonAsignaturas
+            // 
+            buttonAsignaturas.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            buttonAsignaturas.BackColor = Color.FromArgb(37, 99, 235);
+            buttonAsignaturas.Font = new Font("Segoe UI", 12F);
+            buttonAsignaturas.ForeColor = Color.White;
+            buttonAsignaturas.Location = new Point(349, 16);
+            buttonAsignaturas.Name = "buttonAsignaturas";
+            buttonAsignaturas.Size = new Size(167, 42);
+            buttonAsignaturas.TabIndex = 1;
+            buttonAsignaturas.Text = "Asignaturas";
+            buttonAsignaturas.UseVisualStyleBackColor = false;
+            buttonAsignaturas.Click += buttonAsignaturas_Click;
             // 
             // StudentView
             // 
@@ -416,5 +432,6 @@
         private Button button3;
         private TableLayoutPanel tableLayoutPanel3;
         private Button btnEditar;
+        private Button buttonAsignaturas;
     }
 }

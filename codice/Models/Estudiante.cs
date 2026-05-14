@@ -12,9 +12,12 @@ namespace codice.Models
 
         private Curso Curso { get; set; }
 
+        private List<Asignatura> AsignaturasInscritas { get; set; }
+
         public Estudiante()
         {
             Curso = new Curso();
+            AsignaturasInscritas = new List<Asignatura>();
         }
 
         public bool AgregarEstudiante(int id,
@@ -59,6 +62,8 @@ namespace codice.Models
 
             this.AgregarCurso(curso);
 
+      
+
             return actualizo;
 
         }
@@ -78,6 +83,27 @@ namespace codice.Models
             return this.Curso;
         }
 
+        public void InscribirAsignatura(Asignatura asignatura)
+        {
+            AsignaturasInscritas.Add(asignatura);
+        }
+
+        public List<Asignatura> ObtenerAsignaturasInscritas()
+        {
+            return AsignaturasInscritas;
+        }
+        public void LimpiarAsignaturasInscritas()
+        {
+            AsignaturasInscritas.Clear();
+        }
+        public void EliminarAsignatura(int id)
+        {
+            var asignatura = AsignaturasInscritas.FirstOrDefault(a => a.ObtenerId() == id);
+            if (asignatura != null)
+            {
+                AsignaturasInscritas.Remove(asignatura);
+            }
+        }
 
         public double CalcularPromedio()
         {

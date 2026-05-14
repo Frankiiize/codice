@@ -116,7 +116,6 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857151F));
             tableLayoutPanel2.Size = new Size(652, 298);
             tableLayoutPanel2.TabIndex = 1;
-            tableLayoutPanel2.Paint += tableLayoutPanel2_Paint;
             // 
             // inputRut
             // 
@@ -340,7 +339,6 @@
         private TextBox inputCorreo;
         private DateTimePicker inputFechaNacimiento;
         private TableLayoutPanel tableLayoutPanel3;
-        private Button BtnAction;
         private Button ActBtn;
         private Label label1;
         private ComboBox inputCursos;

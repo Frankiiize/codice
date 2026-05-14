@@ -25,6 +25,10 @@ namespace codice.Models
         {
             return Codigo;
         }
+        public int ObtenerId()
+        {
+            return Id;
+        }
 
         public bool CrearAsignatura(int id,string nombre, string codigo)
         {
@@ -42,6 +46,15 @@ namespace codice.Models
         public List<Estudiante> ListarEstudiantes()
         {
             return [];
+        }
+
+        public string ObtenerNombre()
+        {
+            return Nombre;
+        }
+        public override string ToString()
+        {
+            return ObtenerNombre();
         }
     }
 }

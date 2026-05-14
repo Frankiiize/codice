@@ -20,3 +20,6 @@ C:\Users\frank\source\repos\codice\codice\obj\Debug\net8.0-windows\codice.Forms.
 C:\Users\frank\source\repos\codice\codice\obj\Debug\net8.0-windows\codice.Forms.StudentView.resources
 C:\Users\frank\source\repos\codice\codice\obj\Debug\net8.0-windows\codice.Login.resources
 C:\Users\frank\source\repos\codice\codice\obj\Debug\net8.0-windows\codice.AcademicManagement.resources
+C:\Users\frank\source\repos\codice\codice\obj\Debug\net8.0-windows\codice.sourcelink.json
+C:\Users\frank\source\repos\codice\codice\obj\Debug\net8.0-windows\codice.Forms.StudentCurse.resources
+C:\Users\frank\source\repos\codice\codice\obj\Debug\net8.0-windows\codice.Forms.StudentCurseView.resources

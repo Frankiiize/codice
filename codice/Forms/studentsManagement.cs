@@ -43,5 +43,13 @@ namespace codice
         {
             this.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            StudentCurse frm = new StudentCurse();
+
+            frm.ShowDialog();
+
+        }
     }
 }

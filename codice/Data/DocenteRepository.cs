@@ -39,5 +39,11 @@ namespace codice.Data
             return BuscarPorUsuario(email, password) != null;
         }
 
+    
+        public static Docente? BuscarDocentePorRut(string rut)
+        {
+            return Docentes.FirstOrDefault(d => d.Rut == rut);
+        }
+
     }
 }
