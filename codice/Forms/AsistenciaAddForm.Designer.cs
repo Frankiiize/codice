@@ -72,6 +72,7 @@
             labelTitle.Name = "labelTitle";
             labelTitle.Size = new Size(770, 53);
             labelTitle.TabIndex = 3;
+            labelTitle.Text = "Asistencia";
             labelTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel2

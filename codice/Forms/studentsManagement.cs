@@ -27,7 +27,11 @@ namespace codice
         {
             StudentView frm = new StudentView();
 
+            this.Hide();
+
             frm.ShowDialog();
+
+            this.Show();
         }
 
         private void GoRegistrar_Click(object sender, EventArgs e)
@@ -36,7 +40,12 @@ namespace codice
 
             frm.RenderView("registrar", null);
 
+            this.Hide();
+
             frm.ShowDialog();
+
+            this.Show();
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -48,7 +57,11 @@ namespace codice
         {
             StudentCurse frm = new StudentCurse();
 
+            this.Hide();
+
             frm.ShowDialog();
+
+            this.Show();
 
         }
     }

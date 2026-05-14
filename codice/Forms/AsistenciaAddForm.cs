@@ -25,6 +25,7 @@ namespace codice.Forms
         {
             dataGridEstudiantes.AllowUserToAddRows = false;
             dataGridEstudiantes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+         
 
             inputFechaAsistencia.Format = DateTimePickerFormat.Short;
 
@@ -52,6 +53,7 @@ namespace codice.Forms
 
             dataGridEstudiantes.Columns.Clear();
             dataGridEstudiantes.Rows.Clear();
+            inputFechaAsistencia.Value = DateTime.Now;
 
             dataGridEstudiantes.Columns.Add("Rut", "RUT");
             dataGridEstudiantes.Columns.Add("Nombre", "Nombre");
@@ -84,6 +86,11 @@ namespace codice.Forms
         private void comboBoxCursos_SelectedIndexChanged(object sender, EventArgs e)
         {
             Curso? cursoSeleccionado = comboBoxCursos.SelectedItem as Curso;
+
+            comboboxAsignaturas.Items.Clear();
+            comboboxAsignaturas.SelectedIndex = -1;
+            comboboxAsignaturas.Text = "Seleccione una asignatura";
+            inputFechaAsistencia.Value = DateTime.Now;
 
             if (cursoSeleccionado == null) return;
 

@@ -25,3 +25,4 @@ C:\Users\frank\source\repos\codice\codice\obj\Debug\net8.0-windows\codice.Forms.
 C:\Users\frank\source\repos\codice\codice\obj\Debug\net8.0-windows\codice.Forms.StudentCurseView.resources
 C:\Users\frank\source\repos\codice\codice\obj\Debug\net8.0-windows\codice.Forms.AsistenciaAddForm.resources
 C:\Users\frank\source\repos\codice\codice\obj\Debug\net8.0-windows\codice.Forms.AsistenciaManagement.resources
+C:\Users\frank\source\repos\codice\codice\obj\Debug\net8.0-windows\codice.Forms.AsistenciaHistory.resources

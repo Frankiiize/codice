@@ -83,6 +83,7 @@
             button3.TabIndex = 7;
             button3.Text = "Volver";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // label1
             // 
@@ -134,7 +135,7 @@
             label5.Name = "label5";
             label5.Size = new Size(202, 51);
             label5.TabIndex = 4;
-            label5.Text = "Agrega nuevos estudiantes al sistema académico del Instituto Códice.";
+            label5.Text = "Controla la asistencia de los estudiantes en las distintas asignaturas del sistema académico.";
             // 
             // GoRegistrar
             // 
@@ -194,7 +195,7 @@
             label7.Name = "label7";
             label7.Size = new Size(202, 51);
             label7.TabIndex = 6;
-            label7.Text = "#";
+            label7.Text = "Administra las calificaciones de los estudiantes y consulta su rendimiento académico.";
             // 
             // button1
             // 
@@ -229,9 +230,9 @@
             label2.ForeColor = Color.FromArgb(17, 24, 39);
             label2.Location = new Point(4, 126);
             label2.Name = "label2";
-            label2.Size = new Size(23, 25);
+            label2.Size = new Size(225, 25);
             label2.TabIndex = 1;
-            label2.Text = "#";
+            label2.Text = "Gestion De Calificaciones";
             // 
             // AcademicManagement
             // 

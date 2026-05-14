@@ -35,6 +35,25 @@ namespace codice.Models
 
             return true;
         }
+        public Estudiante ObtenerEstudiante()
+        {
+            return Estudiante;
+        }
+
+        public Asignatura ObtenerAsignatura()
+        {
+            return Asignatura;
+        }
+
+        public DateTime ObtenerFecha()
+        {
+            return Fecha;
+        }
+
+        public bool ObtenerPresente()
+        {
+            return Presente;
+        }
 
     }
 }

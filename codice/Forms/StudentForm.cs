@@ -87,6 +87,14 @@ namespace codice.Forms
                     }
 
                     MessageBox.Show("Estudiante Creado Con Exito \n" + estudiantes);
+
+                    inputRut.Text = "";
+                    inputNombre.Text = "";
+                    inputApellido.Text = "";
+                    inputTelefono.Text = "";
+                    inputCorreo.Text = "";
+                    inputFechaNacimiento.Text = ""; 
+
                 }
                 else
                 {

@@ -32,5 +32,12 @@ namespace codice.Forms
         {
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AsistenciaHistory frm = new AsistenciaHistory();
+
+            frm.ShowDialog();
+        }
     }
 }

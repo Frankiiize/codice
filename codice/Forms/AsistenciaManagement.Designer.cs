@@ -135,7 +135,7 @@
             label5.Name = "label5";
             label5.Size = new Size(202, 51);
             label5.TabIndex = 4;
-            label5.Text = "Añade la asistencia a estudiantes en la asignatura correspondiente";
+            label5.Text = "Registra la asistencia de los estudiantes según el curso, asignatura y fecha seleccionada.";
             // 
             // GoRegistrar
             // 
@@ -195,7 +195,7 @@
             label7.Name = "label7";
             label7.Size = new Size(202, 51);
             label7.TabIndex = 6;
-            label7.Text = "Historial de Asistencia por curso y asignatura";
+            label7.Text = "Consulta el historial de asistencia de los estudiantes por curso, asignatura y fecha.";
             // 
             // button1
             // 
@@ -212,6 +212,7 @@
             button1.TabIndex = 3;
             button1.Text = "Ir";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // pictureBox1
             // 

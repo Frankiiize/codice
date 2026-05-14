@@ -44,6 +44,8 @@ namespace codice.Forms
 
                     MessageBox.Show(asignaturasAgregadas);
 
+                   
+
                 }
             }
 

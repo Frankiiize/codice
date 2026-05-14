@@ -23,5 +23,6 @@ namespace codice.Data
         {
             Asistencias.Add(asistencia);
         }
+
     }
 }
