@@ -64,6 +64,8 @@ namespace codice
             MockData initMockData = new MockData();
 
             initMockData.Initialize();
+            initMockData.SeedCursos();
+            initMockData.SeedEstudianteDemo();
         }
     }
 }

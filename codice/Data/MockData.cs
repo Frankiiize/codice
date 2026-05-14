@@ -98,5 +98,117 @@ namespace codice.Data
             CursoRepository.Agregar(curso3);
             CursoRepository.Agregar(curso4);
         }
+
+        public void SeedEstudianteDemo()
+        {
+            Curso? curso =  CursoRepository.ObtenerTodos().FirstOrDefault(c => c.ObtenerId() == 1);
+
+            if (curso == null) return;
+
+            Estudiante estudiante = new Estudiante();
+
+            estudiante.AgregarEstudiante(
+                EstudianteRepository.GenerarId(),
+                "2600747-8",
+                "Francisco",
+                "Jimenez",
+                "999999999",
+                "francisco@codice.cl",
+                Convert.ToDateTime("1990-05-25"),
+                curso
+            );
+
+            foreach (Asignatura asignatura in curso.ObtenerAsignaturas())
+            {
+                estudiante.InscribirAsignatura(asignatura);
+            }
+
+            EstudianteRepository.Estudiantes.Add(estudiante);
+
+            Asignatura? programacion =  curso.ObtenerAsignaturas().FirstOrDefault(a => a.ObtenerCodigo() == "PROG101");
+
+            Asignatura? baseDatos =  curso.ObtenerAsignaturas().FirstOrDefault(a => a.ObtenerCodigo() == "BD202");
+
+            if (programacion != null)
+            {
+                Calificacion nota1 = new Calificacion();
+
+                nota1.RegistrarCalificacion(
+                    CalificacionRepository.GenerarId(),
+                    estudiante,
+                    programacion,
+                    6.5,
+                    DateTime.Now.AddDays(-5),
+                    "Prueba 1"
+                );
+
+                CalificacionRepository.Agregar(nota1);
+
+                Calificacion nota2 = new Calificacion();
+
+                nota2.RegistrarCalificacion(
+                    CalificacionRepository.GenerarId(),
+                    estudiante,
+                    programacion,
+                    5.8,
+                    DateTime.Now.AddDays(-2),
+                    "Taller"
+                );
+
+                CalificacionRepository.Agregar(nota2);
+
+                Asistencia asistencia1 = new Asistencia();
+
+                asistencia1.RegistrarAsistencia(
+                    AsistenciaRepository.GenerarId(),
+                    estudiante,
+                    programacion,
+                    DateTime.Now.AddDays(-5),
+                    true
+                );
+
+                AsistenciaRepository.Agregar(asistencia1);
+
+                Asistencia asistencia2 = new Asistencia();
+
+                asistencia2.RegistrarAsistencia(
+                    AsistenciaRepository.GenerarId(),
+                    estudiante,
+                    programacion,
+                    DateTime.Now.AddDays(-2),
+                    false
+                );
+
+                AsistenciaRepository.Agregar(asistencia2);
+            }
+
+            if (baseDatos != null)
+            {
+                Calificacion notaBd = new Calificacion();
+
+                notaBd.RegistrarCalificacion(
+                    CalificacionRepository.GenerarId(),
+                    estudiante,
+                    baseDatos,
+                    6.0,
+                    DateTime.Now.AddDays(-1),
+                    "Control"
+                );
+
+                CalificacionRepository.Agregar(notaBd);
+
+                Asistencia asistenciaBd = new Asistencia();
+
+                asistenciaBd.RegistrarAsistencia(
+                    AsistenciaRepository.GenerarId(),
+                    estudiante,
+                    baseDatos,
+                    DateTime.Now.AddDays(-1),
+                    true
+                );
+
+                AsistenciaRepository.Agregar(asistenciaBd);
+            }
+        }
     }
 }
