@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             tableLayoutPanel1 = new TableLayoutPanel();
+            button3 = new Button();
             label1 = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
             panel2 = new Panel();
@@ -53,8 +54,9 @@
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 21.62948F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 78.37052F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 9.664948F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 90.33505F));
+            tableLayoutPanel1.Controls.Add(button3, 0, 0);
             tableLayoutPanel1.Controls.Add(label1, 1, 0);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 1, 1);
             tableLayoutPanel1.Location = new Point(12, 12);
@@ -65,33 +67,51 @@
             tableLayoutPanel1.Size = new Size(776, 426);
             tableLayoutPanel1.TabIndex = 0;
             // 
+            // button3
+            // 
+            button3.BackColor = Color.FromArgb(37, 99, 235);
+            button3.FlatAppearance.BorderColor = Color.White;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatAppearance.MouseDownBackColor = Color.White;
+            button3.FlatAppearance.MouseOverBackColor = Color.White;
+            button3.Font = new Font("Segoe UI", 12F);
+            button3.ForeColor = Color.White;
+            button3.Location = new Point(3, 3);
+            button3.Name = "button3";
+            button3.Size = new Size(69, 33);
+            button3.TabIndex = 8;
+            button3.Text = "Salir";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
             // label1
             // 
             label1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 30F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(17, 24, 39);
-            label1.Location = new Point(170, 4);
+            label1.Location = new Point(78, 4);
             label1.Name = "label1";
-            label1.Size = new Size(603, 54);
+            label1.Size = new Size(695, 54);
             label1.TabIndex = 0;
             label1.Text = "Sistema Codice";
             label1.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // tableLayoutPanel2
             // 
-            tableLayoutPanel2.ColumnCount = 3;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 40F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.Controls.Add(panel2, 2, 0);
-            tableLayoutPanel2.Controls.Add(panel1, 0, 0);
-            tableLayoutPanel2.Location = new Point(170, 66);
+            tableLayoutPanel2.ColumnCount = 5;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
+            tableLayoutPanel2.Controls.Add(panel2, 3, 0);
+            tableLayoutPanel2.Controls.Add(panel1, 1, 0);
+            tableLayoutPanel2.Location = new Point(78, 66);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.Size = new Size(603, 357);
+            tableLayoutPanel2.Size = new Size(695, 292);
             tableLayoutPanel2.TabIndex = 2;
             // 
             // panel2
@@ -101,9 +121,9 @@
             panel2.Controls.Add(label4);
             panel2.Controls.Add(pictureBox2);
             panel2.Controls.Add(label5);
-            panel2.Location = new Point(324, 3);
+            panel2.Location = new Point(384, 3);
             panel2.Name = "panel2";
-            panel2.Size = new Size(232, 270);
+            panel2.Size = new Size(237, 281);
             panel2.TabIndex = 4;
             // 
             // button2
@@ -115,7 +135,7 @@
             button2.FlatAppearance.MouseOverBackColor = Color.White;
             button2.Font = new Font("Segoe UI", 12F);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(131, 224);
+            button2.Location = new Point(134, 236);
             button2.Name = "button2";
             button2.Size = new Size(89, 33);
             button2.TabIndex = 3;
@@ -137,7 +157,7 @@
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(3, 3);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(226, 120);
+            pictureBox2.Size = new Size(231, 120);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
@@ -160,9 +180,9 @@
             panel1.Controls.Add(label3);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label2);
-            panel1.Location = new Point(3, 3);
+            panel1.Location = new Point(72, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(232, 270);
+            panel1.Size = new Size(237, 281);
             panel1.TabIndex = 1;
             // 
             // button1
@@ -174,7 +194,7 @@
             button1.FlatAppearance.MouseOverBackColor = Color.White;
             button1.Font = new Font("Segoe UI", 12F);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(131, 224);
+            button1.Location = new Point(136, 236);
             button1.Name = "button1";
             button1.Size = new Size(89, 33);
             button1.TabIndex = 3;
@@ -196,7 +216,7 @@
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(3, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(226, 120);
+            pictureBox1.Size = new Size(234, 120);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -248,5 +268,6 @@
         private Label label4;
         private PictureBox pictureBox2;
         private Label label5;
+        private Button button3;
     }
 }

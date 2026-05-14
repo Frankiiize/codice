@@ -76,9 +76,9 @@
             tableLayoutPanel2.Anchor = AnchorStyles.Top;
             tableLayoutPanel2.BackColor = Color.White;
             tableLayoutPanel2.ColumnCount = 3;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 19.02825F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 69.34864F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.6231108F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15.359477F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 81.69935F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 2.94117641F));
             tableLayoutPanel2.Controls.Add(comboBoxCursos, 1, 0);
             tableLayoutPanel2.Controls.Add(comboboxAsignaturas, 1, 1);
             tableLayoutPanel2.Controls.Add(label2, 0, 1);
@@ -103,10 +103,10 @@
             comboBoxCursos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             comboBoxCursos.Font = new Font("Segoe UI", 14F);
             comboBoxCursos.FormattingEnabled = true;
-            comboBoxCursos.Location = new Point(156, 23);
+            comboBoxCursos.Location = new Point(134, 23);
             comboBoxCursos.Margin = new Padding(20, 3, 3, 3);
             comboBoxCursos.Name = "comboBoxCursos";
-            comboBoxCursos.Size = new Size(401, 33);
+            comboBoxCursos.Size = new Size(477, 33);
             comboBoxCursos.TabIndex = 26;
             comboBoxCursos.SelectedIndexChanged += comboBoxCursos_SelectedIndexChanged;
             // 
@@ -115,10 +115,10 @@
             comboboxAsignaturas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             comboboxAsignaturas.Font = new Font("Segoe UI", 14F);
             comboboxAsignaturas.FormattingEnabled = true;
-            comboboxAsignaturas.Location = new Point(156, 61);
+            comboboxAsignaturas.Location = new Point(134, 61);
             comboboxAsignaturas.Margin = new Padding(20, 3, 3, 3);
             comboboxAsignaturas.Name = "comboboxAsignaturas";
-            comboboxAsignaturas.Size = new Size(401, 33);
+            comboboxAsignaturas.Size = new Size(477, 33);
             comboboxAsignaturas.TabIndex = 23;
             comboboxAsignaturas.SelectedIndexChanged += comboboxAsignaturas_SelectedIndexChanged;
             // 
@@ -126,10 +126,12 @@
             // 
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F);
+            label2.ForeColor = Color.FromArgb(17, 24, 39);
             label2.Location = new Point(24, 62);
             label2.Margin = new Padding(4);
             label2.Name = "label2";
-            label2.Size = new Size(108, 30);
+            label2.Size = new Size(86, 30);
             label2.TabIndex = 0;
             label2.Text = "Asignatura";
             label2.TextAlign = ContentAlignment.MiddleRight;
@@ -138,10 +140,12 @@
             // 
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F);
+            label1.ForeColor = Color.FromArgb(17, 24, 39);
             label1.Location = new Point(24, 24);
             label1.Margin = new Padding(4);
             label1.Name = "label1";
-            label1.Size = new Size(108, 30);
+            label1.Size = new Size(86, 30);
             label1.TabIndex = 25;
             label1.Text = "Curso";
             label1.TextAlign = ContentAlignment.MiddleRight;
@@ -149,7 +153,7 @@
             // dataGridEstudiantes
             // 
             dataGridEstudiantes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridEstudiantes.Location = new Point(139, 137);
+            dataGridEstudiantes.Location = new Point(117, 137);
             dataGridEstudiantes.Name = "dataGridEstudiantes";
             dataGridEstudiantes.Size = new Size(418, 203);
             dataGridEstudiantes.TabIndex = 24;
@@ -158,10 +162,12 @@
             // 
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F);
+            label3.ForeColor = Color.FromArgb(17, 24, 39);
             label3.Location = new Point(24, 100);
             label3.Margin = new Padding(4);
             label3.Name = "label3";
-            label3.Size = new Size(108, 30);
+            label3.Size = new Size(86, 30);
             label3.TabIndex = 27;
             label3.Text = "Fecha";
             label3.TextAlign = ContentAlignment.MiddleRight;
@@ -169,7 +175,7 @@
             // inputFechaAsistencia
             // 
             inputFechaAsistencia.Font = new Font("Segoe UI", 14F);
-            inputFechaAsistencia.Location = new Point(156, 99);
+            inputFechaAsistencia.Location = new Point(134, 99);
             inputFechaAsistencia.Margin = new Padding(20, 3, 3, 3);
             inputFechaAsistencia.Name = "inputFechaAsistencia";
             inputFechaAsistencia.Size = new Size(401, 32);

@@ -104,10 +104,6 @@ namespace codice.Models
                 AsignaturasInscritas.Remove(asignatura);
             }
         }
-
-        public double CalcularPromedio()
-        {
-            return 0;
-        }
+    
     }
 }

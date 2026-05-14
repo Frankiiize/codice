@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace codice.Models
 {
-    internal class Calificacion
+    public class Calificacion
     {
         private int Id { get; set; }
 

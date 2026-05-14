@@ -215,7 +215,7 @@
             // 
             label13.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label13.Font = new Font("Segoe UI", 12F);
             label13.ForeColor = Color.FromArgb(17, 24, 39);
             label13.Location = new Point(3, 130);
             label13.Name = "label13";
@@ -239,7 +239,7 @@
             // 
             label11.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label11.Font = new Font("Segoe UI", 12F);
             label11.ForeColor = Color.FromArgb(17, 24, 39);
             label11.Location = new Point(3, 104);
             label11.Name = "label11";
@@ -263,7 +263,7 @@
             // 
             label9.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label9.Font = new Font("Segoe UI", 12F);
             label9.ForeColor = Color.FromArgb(17, 24, 39);
             label9.Location = new Point(3, 78);
             label9.Name = "label9";
@@ -287,7 +287,7 @@
             // 
             label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label7.Font = new Font("Segoe UI", 12F);
             label7.ForeColor = Color.FromArgb(17, 24, 39);
             label7.Location = new Point(3, 52);
             label7.Name = "label7";
@@ -311,7 +311,7 @@
             // 
             label5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label5.Font = new Font("Segoe UI", 12F);
             label5.ForeColor = Color.FromArgb(17, 24, 39);
             label5.Location = new Point(3, 26);
             label5.Name = "label5";
@@ -335,7 +335,7 @@
             // 
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label3.Font = new Font("Segoe UI", 12F);
             label3.ForeColor = Color.FromArgb(17, 24, 39);
             label3.Location = new Point(3, 0);
             label3.Name = "label3";

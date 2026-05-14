@@ -36,5 +36,17 @@ namespace codice
         {
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CalificacionManagement frm = new CalificacionManagement();
+
+
+            this.Hide();
+
+            frm.ShowDialog();
+
+            this.Show();
+        }
     }
 }

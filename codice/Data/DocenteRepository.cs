@@ -48,6 +48,11 @@ namespace codice.Data
             return docenteLogueado;
         }
 
+        public static void CerrarSesion()
+        {
+            docenteLogueado = null;
+        }
+
 
         public static Docente? BuscarDocentePorRut(string rut)
         {

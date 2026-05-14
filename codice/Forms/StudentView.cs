@@ -120,11 +120,16 @@ namespace codice.Forms
         {
             StudentCurseView frm = new StudentCurseView();
 
-            if(!string.IsNullOrWhiteSpace(rut))
+            if (!string.IsNullOrWhiteSpace(rut))
             {
                 frm.RenderView(rut);
                 frm.ShowDialog();
             }
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
 
         }
     }
