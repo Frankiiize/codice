@@ -109,7 +109,7 @@ namespace codice.Data
 
             estudiante.AgregarEstudiante(
                 EstudianteRepository.GenerarId(),
-                "2600747-8",
+                "26007476-8",
                 "Francisco",
                 "Jimenez",
                 "999999999",

@@ -33,6 +33,11 @@
             button3 = new Button();
             label1 = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
+            panel2 = new Panel();
+            label3 = new Label();
+            button2 = new Button();
+            pictureBox2 = new PictureBox();
+            label6 = new Label();
             panel3 = new Panel();
             label5 = new Label();
             GoRegistrar = new Button();
@@ -43,19 +48,14 @@
             button1 = new Button();
             pictureBox1 = new PictureBox();
             label2 = new Label();
-            panel2 = new Panel();
-            label3 = new Label();
-            button2 = new Button();
-            pictureBox2 = new PictureBox();
-            label6 = new Label();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -102,7 +102,7 @@
             label1.Name = "label1";
             label1.Size = new Size(693, 51);
             label1.TabIndex = 0;
-            label1.Text = "Sistema Codice";
+            label1.Text = "Gestion de Estudiantes";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel2
@@ -122,6 +122,66 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel2.Size = new Size(693, 288);
             tableLayoutPanel2.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel2.BackColor = Color.White;
+            panel2.Controls.Add(label3);
+            panel2.Controls.Add(button2);
+            panel2.Controls.Add(pictureBox2);
+            panel2.Controls.Add(label6);
+            panel2.Location = new Point(465, 3);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(225, 282);
+            panel2.TabIndex = 7;
+            // 
+            // label3
+            // 
+            label3.ForeColor = Color.FromArgb(107, 114, 128);
+            label3.Location = new Point(7, 161);
+            label3.Name = "label3";
+            label3.Size = new Size(202, 51);
+            label3.TabIndex = 6;
+            label3.Text = "Registra asignaturas a los estudiantes inscritos";
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(37, 99, 235);
+            button2.FlatAppearance.BorderColor = Color.White;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatAppearance.MouseDownBackColor = Color.White;
+            button2.FlatAppearance.MouseOverBackColor = Color.White;
+            button2.Font = new Font("Segoe UI", 12F);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(135, 236);
+            button2.Name = "button2";
+            button2.Size = new Size(89, 33);
+            button2.TabIndex = 3;
+            button2.Text = "Ir";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(3, 3);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(246, 120);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 0;
+            pictureBox2.TabStop = false;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 14F);
+            label6.ForeColor = Color.FromArgb(17, 24, 39);
+            label6.Location = new Point(4, 126);
+            label6.Name = "label6";
+            label6.Size = new Size(184, 25);
+            label6.TabIndex = 1;
+            label6.Text = "Inscribir Asignaturas";
             // 
             // panel3
             // 
@@ -239,69 +299,9 @@
             label2.ForeColor = Color.FromArgb(17, 24, 39);
             label2.Location = new Point(4, 126);
             label2.Name = "label2";
-            label2.Size = new Size(169, 25);
+            label2.Size = new Size(141, 25);
             label2.TabIndex = 1;
-            label2.Text = "Buscar Estudiantes";
-            // 
-            // panel2
-            // 
-            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel2.BackColor = Color.White;
-            panel2.Controls.Add(label3);
-            panel2.Controls.Add(button2);
-            panel2.Controls.Add(pictureBox2);
-            panel2.Controls.Add(label6);
-            panel2.Location = new Point(465, 3);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(225, 282);
-            panel2.TabIndex = 7;
-            // 
-            // label3
-            // 
-            label3.ForeColor = Color.FromArgb(107, 114, 128);
-            label3.Location = new Point(7, 161);
-            label3.Name = "label3";
-            label3.Size = new Size(202, 51);
-            label3.TabIndex = 6;
-            label3.Text = "Registra asignaturas a los estudiantes inscritos";
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(37, 99, 235);
-            button2.FlatAppearance.BorderColor = Color.White;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatAppearance.MouseDownBackColor = Color.White;
-            button2.FlatAppearance.MouseOverBackColor = Color.White;
-            button2.Font = new Font("Segoe UI", 12F);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(135, 236);
-            button2.Name = "button2";
-            button2.Size = new Size(89, 33);
-            button2.TabIndex = 3;
-            button2.Text = "Ir";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(3, 3);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(246, 120);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 0;
-            pictureBox2.TabStop = false;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 14F);
-            label6.ForeColor = Color.FromArgb(17, 24, 39);
-            label6.Location = new Point(4, 126);
-            label6.Name = "label6";
-            label6.Size = new Size(190, 25);
-            label6.TabIndex = 1;
-            label6.Text = "Registrar Asignaturas";
+            label2.Text = "Ver Estudiantes";
             // 
             // studentsManagement
             // 
@@ -314,15 +314,15 @@
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
